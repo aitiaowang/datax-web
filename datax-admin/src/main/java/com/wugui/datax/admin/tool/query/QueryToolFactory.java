@@ -22,7 +22,7 @@ public class QueryToolFactory {
         if (JdbcConstants.MYSQL.equals(datasource)) {
             return getMySQLQueryToolInstance(jobDatasource);
         }else if (JdbcConstants.HANA.equals(datasource)) {
-            return getOracleQueryToolInstance(jobDatasource);
+            return getHaNaQueryToolInstance(jobDatasource);
         } else if (JdbcConstants.ORACLE.equals(datasource)) {
             return getOracleQueryToolInstance(jobDatasource);
         } else if (JdbcConstants.POSTGRESQL.equals(datasource)) {

@@ -17,7 +17,7 @@ public class DatabaseMetaFactory {
         if (JdbcConstants.MYSQL.equals(dbType)) {
             return MySQLDatabaseMeta.getInstance();
         } else if (JdbcConstants.HANA.equals(dbType)) {
-            return OracleDatabaseMeta.getInstance();
+            return HaNaDatabaseMeta.getInstance();
         } else if (JdbcConstants.ORACLE.equals(dbType)) {
             return OracleDatabaseMeta.getInstance();
         } else if (JdbcConstants.POSTGRESQL.equals(dbType)) {
