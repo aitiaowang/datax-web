@@ -163,6 +163,13 @@
             <systemPath>${basedir}/src/main/lib/ojdbc6-11.2.0.3.jar</systemPath>
         </dependency>
 
+        <!-- HANA - jdbc -->
+        <dependency>
+            <groupId>com.sap.cloud.db.jdbc</groupId>
+            <artifactId>ngdbc</artifactId>
+            <version>${hana.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>sqljdbc4</artifactId>
