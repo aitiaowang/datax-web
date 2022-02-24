@@ -21,6 +21,8 @@ public class QueryToolFactory {
         String datasource = jobDatasource.getDatasource();
         if (JdbcConstants.MYSQL.equals(datasource)) {
             return getMySQLQueryToolInstance(jobDatasource);
+        }else if (JdbcConstants.HANA.equals(datasource)) {
+            return getOracleQueryToolInstance(jobDatasource);
         } else if (JdbcConstants.ORACLE.equals(datasource)) {
             return getOracleQueryToolInstance(jobDatasource);
         } else if (JdbcConstants.POSTGRESQL.equals(datasource)) {
@@ -44,6 +46,15 @@ public class QueryToolFactory {
             return new MySQLQueryTool(jdbcDatasource);
         } catch (Exception e) {
             throw RdbmsException.asConnException(JdbcConstants.MYSQL,
+                    e,jdbcDatasource.getJdbcUsername(),jdbcDatasource.getDatasourceName());
+        }
+    }
+
+    private static BaseQueryTool getHaNaQueryToolInstance(JobDatasource jdbcDatasource) {
+        try {
+            return new HaNaQueryTool(jdbcDatasource);
+        } catch (Exception e) {
+            throw RdbmsException.asConnException(JdbcConstants.HANA,
                     e,jdbcDatasource.getJdbcUsername(),jdbcDatasource.getDatasourceName());
         }
     }

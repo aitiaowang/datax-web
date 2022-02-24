@@ -48,6 +48,9 @@ public interface JdbcConstants {
     String MYSQL_DRIVER_6             = "com.mysql.cj.jdbc.Driver";
     String MYSQL_DRIVER_REPLICATE     = "com.mysql.jdbc.";
 
+    String HANA                       = "hana";
+    String HANA_DRIVER               = "com.sap.db.jdbc.Driver";
+
     String MARIADB                    = "mariadb";
     String MARIADB_DRIVER             = "org.mariadb.jdbc.Driver";
 
